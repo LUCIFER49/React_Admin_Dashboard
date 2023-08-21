@@ -1,7 +1,10 @@
+import { createBrowserRouter, Route, Link   } from "react-router-dom";
+import Home from "./Pages/Home/Home";
+
 const App = () => {
   return(
     <div>
-      <h1>Hello world</h1>
+     <Home/>
     </div>
   );
 }
