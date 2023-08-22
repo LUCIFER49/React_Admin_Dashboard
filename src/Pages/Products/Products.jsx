@@ -1,11 +1,11 @@
-import "./products.scss";
+import './porducts.scss';
 
 const Products = () => {
     return(
         <div className="products">
             Products
         </div>
-    );
+    )
 }
 
 export default Products;
