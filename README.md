@@ -1,5 +1,3 @@
-# Getting Started with Create React App
+# Getting Started with React JS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+## Creating Projects while learning React JS
