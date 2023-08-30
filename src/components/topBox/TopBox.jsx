@@ -6,7 +6,7 @@ const TopBox = () => {
     <div className="topbox">
       <h1>Top Deals</h1>
       <div className="list">
-        {topDealUsers.map((user) => (
+        {topDealUsers.map(user => (
           <div className="listItem" key={user.id}>
             <div className="user">
               <img src={user.img} alt="" />
