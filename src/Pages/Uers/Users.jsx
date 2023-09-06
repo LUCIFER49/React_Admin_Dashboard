@@ -1,4 +1,4 @@
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import DataTable from "../../components/dataTable/DataTable";
 import "./user.scss"
 
 const Users = () => {
@@ -8,7 +8,7 @@ const Users = () => {
                 <h1>Users</h1>
                 <button>Add New User</button>
             </div>
-
+            <DataTable/>
         </div>
     );
 }

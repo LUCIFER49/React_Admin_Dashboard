@@ -1,8 +1,8 @@
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import "./datatable.scss";
 
 const DataTable = () => {
-    
+
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
@@ -50,6 +50,7 @@ const DataTable = () => {
   return (
     <div className="datatable">
       <DataGrid
+      className="dataGrid"
         rows={rows}
         columns={columns}
         initialState={{
@@ -59,9 +60,19 @@ const DataTable = () => {
             },
           },
         }}
+        slots={{toolbar: GridToolbar}}
+        slotProps={{
+            toolbar: {
+                showQuickFilter: true,
+                quickFilterProps: {debounceMs: 500},
+            }
+        }}
         pageSizeOptions={[5]}
         checkboxSelection
         disableRowSelectionOnClick
+        disableColumnFilter
+        disableDensitySelector
+        disableColumnSelector
       />
     </div>
   );
