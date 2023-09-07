@@ -6,6 +6,14 @@ const DataTable = () => {
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
+        field: "avatar",
+        headerName: "Avatar",
+        width: 100,
+        renderCell: (params) => {
+            return <img src={ params.row.img || "/images/noavatar.png" } alt=""/>
+        }
+    },
+    {
       field: "firstName",
       headerName: "First name",
       width: 150,
