@@ -3,6 +3,12 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import "./datatable.scss";
 
 const DataTable = (props) => {
+
+  const handleDelete = (id) => {
+    //deleting item 
+    console.alert(id + " has been deleted!" )
+    
+  }
   
   const actionColumn = [
     {
@@ -13,10 +19,10 @@ const DataTable = (props) => {
         return(
           <div className="action">
             <Link to={`/${props.slug}/${params.row.id}`}>
-            <img src="images/view.svg" alt="" />
+            <img src="/images/view.svg" alt="" />
             </Link>
-            <div className="delete">
-              <img src="images/delete.svg" alt="" />
+            <div className="delete" onClick={()=>handleDelete(params.row.id)}>
+              <img src="/images/delete.svg" alt="" />
             </div>
           </div>
         )
@@ -29,7 +35,7 @@ const DataTable = (props) => {
       <DataGrid
         className="dataGrid"
         rows={props.rows}
-        columns={props.columns}
+        columns={[ ...props.columns, actionColumn ]}
         initialState={{
           pagination: {
             paginationModel: {
