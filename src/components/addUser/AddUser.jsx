@@ -1,21 +1,30 @@
 import "./adduser.scss";
 
 const AddUser = (props) => {
-    return(
-        <div className="adduser">
-            <div className="modal">
-                <span className="close">X</span>
-                <h1>Add New {props.slug}</h1>
-                <form >
-                    {props.column.map( column => (
-                        <div className="item">
-                            <label>{column}</label>
-                        </div>
-                    ))}
-                </form>
-            </div>
-        </div>
-    )
-}
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
+  return (
+    <div className="adduser">
+      <div className="modal">
+        <span className="close" onClick={() => props.setOpen(false)} >X</span>
+        <h1>Add New {props.slug}</h1>
+        <form onSubmit={handleSubmit} >
+          {props.columns
+            .filter((item) => item.field !== "id" && item.field !== "img")
+            .map((column) => (
+              <div className="item">
+                <label>{column.headerName}</label>
+                <input type={column.type} placeholder={column.field} />
+              </div>
+            ))}
+            <button>Send</button>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 export default AddUser;
