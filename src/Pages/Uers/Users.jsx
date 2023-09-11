@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DataTable from "../../components/dataTable/DataTable";
+import AddUser from "../../components/addUser/AddUser";
 import { userRows } from "../../data";
 import "./user.scss";
 
@@ -54,6 +55,9 @@ const columns = [
 
 
 const Users = () => {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="users">
       <div className="info">
@@ -61,6 +65,7 @@ const Users = () => {
         <button>Add New User</button>
       </div>
       <DataTable slug="users" columns={columns} rows={userRows} />
+      { open && <AddUser slug="user" columns={columns} setOpen={setOpen} /> }
     </div>
   );
 };
