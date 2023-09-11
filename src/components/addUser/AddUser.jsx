@@ -4,6 +4,10 @@ const AddUser = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        //add new item
+        //for API 
+        //axios.part(`api/$(slug)s`, {})
     }
 
   return (
