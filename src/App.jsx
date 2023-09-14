@@ -1,7 +1,9 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Users from "./Pages/Uers/Users";
+import User from "./Pages/User/User";
 import Products from "./Pages/Products/Products";
+import Product from "./Pages/Product/Product";
 import NavBar from "./components/navBar/NavBarr";
 import Menu from "./components/menu/Menu";
 import Footer from "./components/footer/Footer";
@@ -46,12 +48,20 @@ const App = () => {
           path: "/products",
           element: <Products />,
         },
+        {
+          path: "/users/:id",
+          element: <User />,
+        },
+        {
+          path: "/products/:id",
+          element: <Product />,
+        },
       ],
     },
     {
       path: "/login",
-      element: <Login/>
-    }
+      element: <Login />,
+    },
   ]);
 
   return <RouterProvider router={router} />;
