@@ -55,7 +55,7 @@
     }
     .chart {
       margin-top: 50px;
-      width: 80px;
+      width: 80%;
       height: 400px;
 
       @include md {
@@ -68,22 +68,47 @@
     flex: 1;
 
     h2 {
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
 
     ul {
-        li {
-            list-style-type: none;
-            position: relative;
-            width: 1px;
-            padding-top: 50px;
-            background-color: #f45b69;
+      li {
+        list-style-type: none;
+        position: relative;
+        width: 1px;
+        padding-top: 50px;
+        background-color: #f45b69;
 
-            &::after {
-                content: "";
-            }
-
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #f45b69;
+          transform: translateX(-50%);
         }
+
+        div {
+          min-height: 480px;
+          padding: 15px;
+          background-color: #f45b6810;
+
+          @include md {
+            min-width: 250px;
+          }
+
+          p {
+            margin-bottom: 5px;
+          }
+
+          time {
+            font-size: 12px;
+          }
+        }
+      }
     }
   }
 }

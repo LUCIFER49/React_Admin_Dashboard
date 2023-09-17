@@ -1,10 +1,10 @@
-import SingleProduct from "../../components/singleProdcut/SingleProduct"
+import SingleUser from "../../components/singleUser/SingleUser"
 import { singleUser } from "../../data";
 
 const User = () => {
     return(
         <div className="user">
-            <SingleProduct {...singleUser}/>
+            <SingleUser {...singleUser}/>
         </div>
     )
 }
