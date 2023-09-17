@@ -1,4 +1,4 @@
-import { Legend, Line, LineChart, ResponsiveContainer, ToolTip, XAxis, YAxis } from "recharts";
+import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import "./singleuser.scss";
 
 const SingleUser = (props) => {
@@ -27,7 +27,7 @@ const SingleUser = (props) => {
                     <LineChart width={500} height={300} data={props.chart.data} margin={{top: 5, right: 30, left: 20, bottom: 5}} >
                         <XAxis dataKey="name"/>
                         <YAxis/>
-                        <ToolTip/>
+                        <Tooltip/>
                         <Legend/>
                         {props.chart.dataKeys.map((dataKey) => (
                             <Line type="monotone" dataKey={dataKey.name} stroke={dataKey.color} />
@@ -39,7 +39,14 @@ const SingleUser = (props) => {
       </div>
       <div className="activities">
         <h2>Latest Activities</h2>
-        {props.activities}
+        {props.activities.map((activity) => (
+          <li key={activity.text}>
+            <div>
+              <p>{activity.text}</p>
+              <time>{activity.time}</time>
+            </div>
+          </li>
+        ))}
       </div>
     </div>
   );
