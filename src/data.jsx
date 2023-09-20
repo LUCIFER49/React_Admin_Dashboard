@@ -565,7 +565,7 @@ export const singleUser = {
     username: "Johndoe99",
     fullname: "John Doe",
     email: "johndoe@gmail.com",
-    phone: "123 456 789",
+    phone: "123 456 7890",
     status: "verified",
   },
   chart: {
