@@ -6,8 +6,9 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 const DataTable = (props) => {
 
   //  PERFORMING CHANGES USING API
-  // const queryClient = useQueryClient();
 
+  // const queryClient = useQueryClient();
+  
   // const mutation = useMutation({
   //   mutationFn: (id)=> {
   //     return fetch(`http://localhost:8800/api/${props.slug}/${id}`, {method:"delete"});
