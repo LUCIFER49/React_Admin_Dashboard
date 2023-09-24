@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DataTable from "../../components/dataTable/DataTable";
 import AddUser from "../../components/addUser/AddUser";
+// import { useQuery } from "@tanstack/react-query";
 import { userRows } from "../../data";
 import "./user.scss";
 
@@ -58,12 +59,21 @@ const Users = () => {
 
   const [open, setOpen] = useState(false);
 
+  // const { isLoading, data } = useQuery({
+  //   queryKey: ['allusers'],
+  //   queryFn: () =>
+  //     fetch('https://localhost:8800/api/users').then(
+  //       (res) => res.json(),
+  //     )
+  // })
+
   return (
     <div className="users">
       <div className="info">
         <h1>Users</h1>
         <button onClick={() => setOpen(true)}>Add New User</button>
       </div>
+      {/* {isLoading ? ("Loading ...") : (<DataTable slug="users" columns={columns} rows={data} /> )} */}
       <DataTable slug="users" columns={columns} rows={userRows} />
       { open && <AddUser slug="user" columns={columns} setOpen={setOpen} /> }
     </div>

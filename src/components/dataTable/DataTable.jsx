@@ -1,10 +1,25 @@
 import { Link } from "react-router-dom";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import "./datatable.scss";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const DataTable = (props) => {
+
+  //  PERFORMING CHANGES USING API
+  // const queryClient = useQueryClient();
+
+  // const mutation = useMutation({
+  //   mutationFn: (id)=> {
+  //     return fetch(`http://localhost:8800/api/${props.slug}/${id}`, {method:"delete"});
+  //   },
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries([`all${slug}`]);
+  //   }
+  // })
+    
   const handleDelete = (id) => {
     //deleting item
+    // mutation.mutate(id);             //CALLING OF API
     console.log(id + " has been deleted!");
   };
 

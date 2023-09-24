@@ -8,7 +8,10 @@ import NavBar from "./components/navBar/NavBarr";
 import Menu from "./components/menu/Menu";
 import Footer from "./components/footer/Footer";
 import Login from "./Pages/Login/Login";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import "./styles/global.scss";
+
+const queryClient = new QueryClient();
 
 const App = () => {
   const Layout = () => {
@@ -22,7 +25,9 @@ const App = () => {
             <Menu />
           </div>
           <div className="contentContainer">
-            <Outlet />
+            <QueryClientProvider client={queryClient}>
+              <Outlet />
+            </QueryClientProvider>
           </div>
         </div>
         {/* calling footer */}
